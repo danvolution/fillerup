@@ -1,4 +1,4 @@
-#define RUN_TEST false
+//#define RUN_TEST true
 
 #include <pebble.h>
 #include "common.h"
@@ -49,12 +49,11 @@ static void init() {
   // Show the Window on the watch, with animated=true
   window_stack_push(_mainWindow, true);
   
-  if (RUN_TEST) {
+#ifdef RUN_TEST
     tick_timer_service_subscribe(SECOND_UNIT, timer_handler);
-    
-  } else {
+#else
     tick_timer_service_subscribe(MINUTE_UNIT, timer_handler);
-  }
+#endif
 }
 
 static void deinit() {
