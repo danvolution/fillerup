@@ -3,6 +3,7 @@
   
 typedef struct {
   InverterLayer* inverterLayer;
+  int16_t lastUpdateMinute;
 } WaterLayerData;
 
 WaterLayerData* CreateWaterLayer(Layer* relativeLayer, LayerRelation relation);

@@ -15,7 +15,7 @@ TestUnitData* CreateTestUnit() {
   TestUnitData* data = malloc(sizeof(TestUnitData));
   if (data != NULL) {
     memset(data, 0, sizeof(TestUnitData));
-    
+
     // Normal. Increment by 61 minutes so hour and minute changes.
     _testData[0].startTime = 1420070400; // Jan 1, 2015 00:00:00 GMT
     _testData[0].stepSeconds = 3660;
