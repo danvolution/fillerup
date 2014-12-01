@@ -1,4 +1,4 @@
-//#define RUN_TEST true
+//#define RUN_TEST true 
 
 #include <pebble.h>
 #include "common.h"

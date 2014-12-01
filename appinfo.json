@@ -69,7 +69,7 @@
     "shortName": "Fill 'er up",
     "uuid": "51b1b954-1378-4a14-ac6f-d43d8bc78dbf",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": true
     }
