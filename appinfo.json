@@ -1,7 +1,12 @@
 {
-    "appKeys": {},
+    "appKeys": {
+        "KEY_BLUETOOTH_VIBRATE": 3,
+        "KEY_CURRENT_VERSION": 0,
+        "KEY_HOUR_VIBRATE": 2,
+        "KEY_INSTALLED_VERSION": 1
+    },
     "capabilities": [
-        ""
+        "configurable"
     ],
     "companyName": "dansherbeck",
     "longName": "Fill 'er up",
@@ -69,7 +74,7 @@
     "shortName": "Fill 'er up",
     "uuid": "51b1b954-1378-4a14-ac6f-d43d8bc78dbf",
     "versionCode": 1,
-    "versionLabel": "1.1",
+    "versionLabel": "1.2",
     "watchapp": {
         "watchface": true
     }

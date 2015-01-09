@@ -17,9 +17,13 @@ TestUnitData* CreateTestUnit() {
     memset(data, 0, sizeof(TestUnitData));
 
     // Normal. Increment by 61 minutes so hour and minute changes.
+//     _testData[0].startTime = 1420070400; // Jan 1, 2015 00:00:00 GMT
+//     _testData[0].stepSeconds = 3660;
+//     _testData[0].stepCount = 60;
+
     _testData[0].startTime = 1420070400; // Jan 1, 2015 00:00:00 GMT
-    _testData[0].stepSeconds = 3660;
-    _testData[0].stepCount = 60;
+    _testData[0].stepSeconds = 300;
+    _testData[0].stepCount = 12;
   }
   
   return data;
