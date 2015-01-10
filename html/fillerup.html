@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <title>Fill 'er up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page">
+
+      <div data-role="header">
+        <h1>Fill 'er up</h1>
+      </div><!-- /header -->
+      
+      <div role="main" class="ui-content">
+        <div id="new_version_section" class="ui-bar ui-bar-a ui-corner-all" style="display: none;">
+          <p>New version available!</p>
+        </div>
+        
+        <div>
+          <div class="ui-field-contain">
+            <label for="hour_vibrate_select">Vibrate on the hour:</label>
+            <select id="hour_vibrate_select" data-role="flipswitch" data-mini="false">
+                <option value="0" selected="">Off</option>
+                <option value="1">On</option>
+            </select>
+          </div>
+
+          <div class="ui-field-contain">
+            <label for="bluetooth_vibrate_select">Vibrate on Bluetooth disconnect:</label>
+            <select id="bluetooth_vibrate_select" data-role="flipswitch" data-mini="false">
+                <option value="0" selected="">Off</option>
+                <option value="1">On</option>
+            </select>
+          </div>
+        </div>
+      </div><!-- /content -->
+
+      <div data-role="footer" style="text-align:center;" data-position="fixed">
+        <a href="#" id="button_cancel" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-left">Cancel</a>
+        <a href="#" id="button_save" class="ui-btn ui-corner-all ui-shadow ui-icon-check ui-btn-icon-left">Save</a>
+      </div><!-- /footer -->
+      
+    </div><!-- /page -->
+
+    <script>    
+      // The current release version of the app. Value is a unique integer that
+      // is incremented on every release.
+      var CURRENT_VERSION = "12";
+          
+      $().ready(function() {
+        // Check for newer version
+        var urlVariable = getURLVariable("installedVersion", "0");
+        if (isNaN(urlVariable) == false && 
+          parseInt(urlVariable) > 0 &&
+          (parseInt(CURRENT_VERSION) > parseInt(urlVariable))) {
+          
+          var newVersionSection = document.getElementById("new_version_section");
+          newVersionSection.style.display = "block";
+        }
+        
+        // Initialize hourly vibrate
+        var urlVariable = getURLVariable("hourVibrate", "0");
+        if (isNaN(urlVariable)) {
+          urlVariable = "0";
+        }
+        
+        if (urlVariable == "1") {
+          $("#hour_vibrate_select").val("1");
+          $("#hour_vibrate_select").parent().addClass("ui-flipswitch-active");
+        }
+
+        // Initialize Bluetooth vibrate
+        urlVariable = getURLVariable("bluetoothVibrate", "1");
+        if (isNaN(urlVariable)) {
+          urlVariable = "1";
+        }
+        
+        if (urlVariable != "0") {
+          $("#bluetooth_vibrate_select").val("1");
+          $("#bluetooth_vibrate_select").parent().addClass("ui-flipswitch-active");
+        }
+      });
+      
+      $("#button_cancel").click(function() {
+        document.location = "pebblejs://close#";
+      });
+
+      $("#button_save").click(function() {
+        var settings = getSettings();
+        var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(settings));
+        document.location = location;
+      });
+      
+      function getSettings() {
+        var hourVibrateSelect = document.getElementById("hour_vibrate_select");
+        var bluetoothVibrateSelect = document.getElementById("bluetooth_vibrate_select");
+        var settings = {
+          "currentVersion" : CURRENT_VERSION,
+          "hourVibrate" : hourVibrateSelect.options[hourVibrateSelect.selectedIndex].value,
+          "bluetoothVibrate" : bluetoothVibrateSelect.options[bluetoothVibrateSelect.selectedIndex].value
+        }
+        
+        return settings;
+      };
+      
+      function getURLVariable(name, defaultValue) {
+        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)",
+            regex = new RegExp(regexS),
+            results = regex.exec(window.location.href);
+            
+        if (results == null) {
+          return defaultValue;
+          
+        } else {
+          return results[1];
+        }
+      };
+    </script> 
+
+  </body>
+</html>
