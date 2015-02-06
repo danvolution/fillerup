@@ -112,7 +112,7 @@ function saveSettings(settings) {
 }
 
 function showSettings() {
-  Pebble.openURL("http://www.sherbeck.com/pebble/fillerup-dev.html?" + formatUrlVariables());
+  Pebble.openURL("http://www.sherbeck.com/pebble/fillerup.html?" + formatUrlVariables());
 }
 
 function getLocalInt(name, defaultValue) {
