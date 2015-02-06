@@ -1,9 +1,13 @@
 {
     "appKeys": {
         "KEY_BLUETOOTH_VIBRATE": 3,
+        "KEY_CLOCK_24_HOUR": 6,
         "KEY_CURRENT_VERSION": 0,
         "KEY_HOUR_VIBRATE": 2,
-        "KEY_INSTALLED_VERSION": 1
+        "KEY_HOUR_VIBRATE_END": 5,
+        "KEY_HOUR_VIBRATE_START": 4,
+        "KEY_INSTALLED_VERSION": 1,
+        "KEY_REQUEST_SETUP_INFO": 7
     },
     "capabilities": [
         "configurable"
@@ -74,7 +78,7 @@
     "shortName": "Fill 'er up",
     "uuid": "51b1b954-1378-4a14-ac6f-d43d8bc78dbf",
     "versionCode": 1,
-    "versionLabel": "1.2",
+    "versionLabel": "1.3",
     "watchapp": {
         "watchface": true
     }

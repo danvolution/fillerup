@@ -2,13 +2,16 @@
   
 //#define RUN_TEST true 
 //#define LOGGING_ON true
-  
+
+#define INSTALLED_VERSION 13
+
 #define SCREEN_WIDTH 144
 #define SCREEN_HEIGHT 168
 #define WATER_RISE_DURATION 500
   
 #ifdef LOGGING_ON
-  #define MY_APP_LOG(level, fmt, args...) APP_LOG(level, fmt, args)
+  #define MY_APP_LOG(level, fmt, args...)                                \
+    app_log(level, __FILE_NAME__, __LINE__, fmt, ## args)
 #else
   #define MY_APP_LOG(level, fmt, args...)
 #endif
