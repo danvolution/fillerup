@@ -1,7 +1,8 @@
 <!DOCTYPE html> 
-<html>
+<html lang="en-US">
   <head>
-    <title>Fill 'er up</title>
+    <title>Fill 'er up Settings</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -10,81 +11,120 @@
 
   <body>
     <div data-role="page">
-
       <div data-role="header">
-        <h1>Fill 'er up</h1>
+        <h1 style="margin:0% 10%;">Fill 'er up Settings</h1>
+        <!-- PayPal -->
+        <div style="margin-bottom:7px;text-align:center;">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+            ">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </div><!-- /PayPal -->
       </div><!-- /header -->
-      
-      <div role="main" class="ui-content">
-        <div id="new_version_section" class="ui-bar ui-bar-a ui-corner-all" style="display: none;">
-          <p>New version available!</p>
-        </div>
-        
-        <div>
-          <div class="ui-field-contain">
-            <label for="hour_vibrate_select">Vibrate on the hour:</label>
-            <select id="hour_vibrate_select" data-role="flipswitch" data-mini="false">
-                <option value="0" selected="">Off</option>
-                <option value="1">On</option>
-            </select>
-          </div>
 
-          <div class="ui-field-contain">
-            <label for="bluetooth_vibrate_select">Vibrate on Bluetooth disconnect:</label>
-            <select id="bluetooth_vibrate_select" data-role="flipswitch" data-mini="false">
-                <option value="0" selected="">Off</option>
-                <option value="1">On</option>
-            </select>
+      <div role="main" class="ui-content">
+        <div class="ui-field-contain">
+          <label for="hour_vibrate_select">Vibrate on the hour:</label>
+          <select id="hour_vibrate_select" data-role="flipswitch" data-mini="true">
+            <option value="0" selected>Off</option>
+            <option value="1">On</option>
+          </select>
+
+          <div id="hour_vibrate_hours_section" style="display: none;">
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <fieldset class="ui-field-contain" style="margin-left:5px;margin-right:5px;">
+                  <label for="hour_vibrate_start_select">Start:</label>
+                  <select name="hour_vibrate_start_select" id="hour_vibrate_start_select" data-mini="true">
+                  </select>
+                </fieldset>
+              </div>
+              <div class="ui-block-b">
+                <fieldset class="ui-field-contain" style="margin-left:5px;margin-right:5px;">
+                  <label for="hour_vibrate_end_select">End:</label>
+                  <select name="hour_vibrate_end_select" id="hour_vibrate_end_select" data-mini="true">
+                  </select>
+                </fieldset>
+              </div>
+            </div><!-- /grid-a -->
           </div>
+        </div>
+
+        <div class="ui-field-contain">
+          <label for="bluetooth_vibrate_select">Vibrate on Bluetooth disconnect:</label>
+          <select id="bluetooth_vibrate_select" data-role="flipswitch" data-mini="true">
+            <option value="0" selected>Off</option>
+            <option value="1">On</option>
+          </select>
         </div>
       </div><!-- /content -->
 
-      <div data-role="footer" style="text-align:center;" data-position="fixed">
-        <a href="#" id="button_cancel" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-left">Cancel</a>
-        <a href="#" id="button_save" class="ui-btn ui-corner-all ui-shadow ui-icon-check ui-btn-icon-left">Save</a>
+      <div data-role="footer" data-position="fixed" style="overflow:hidden;">
+        <div data-role="navbar">
+          <ul>
+            <li>
+              <a href="#" id="button_cancel" class="ui-btn ui-shadow ui-icon-delete ui-btn-icon-left">Cancel</a>
+            </li>
+            <li>
+              <a href="#" id="button_save" class="ui-btn ui-shadow ui-icon-check ui-btn-icon-left ui-btn-active">Save</a>
+            </li>
+          </ul>
+        </div><!-- /navbar -->
       </div><!-- /footer -->
-      
     </div><!-- /page -->
 
     <script>    
       // The current release version of the app. Value is a unique integer that
       // is incremented on every release.
-      var CURRENT_VERSION = "12";
+      var CURRENT_VERSION = "13";
+      
+      // Last version of settings that did not contain hour range configuration for hourly vibrate.
+      var NO_HOUR_RANGE_VERSION = "12";
+
+      var Labels12Hour = [ "12:00 AM", "1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM", "6:00 AM", "7:00 AM", 
+                           "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", 
+                           "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM", "9:00 PM", "10:00 PM", "11:00 PM" ];
+
+      var Labels24Hour = [ "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", 
+                           "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", 
+                           "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00" ];
           
       $().ready(function() {
-        // Check for newer version
-        var urlVariable = getURLVariable("installedVersion", "0");
-        if (isNaN(urlVariable) == false && 
-          parseInt(urlVariable) > 0 &&
-          (parseInt(CURRENT_VERSION) > parseInt(urlVariable))) {
-          
-          var newVersionSection = document.getElementById("new_version_section");
-          newVersionSection.style.display = "block";
-        }
-        
+        // Get installed version
+        var installedVersion = getURLVariableInt("installedVersion", 0);
+
+        // Get 24-hour clock format
+        var clock24Hour = getURLVariableInt("clock24Hour", 0);
+
         // Initialize hourly vibrate
-        var urlVariable = getURLVariable("hourVibrate", "0");
-        if (isNaN(urlVariable)) {
-          urlVariable = "0";
-        }
-        
-        if (urlVariable == "1") {
-          $("#hour_vibrate_select").val("1");
-          $("#hour_vibrate_select").parent().addClass("ui-flipswitch-active");
+        var hourVibrate = initializeFlipSwitch("hourVibrate", "hour_vibrate_select", 0);
+
+        // Initialize hourly vibrate start and end hours
+        var hourVibrateStart = getURLVariableInt("hourVibrateStart", 9);
+        var hourVibrateEnd = getURLVariableInt("hourVibrateEnd", 18);
+        setSelectControlHours("hour_vibrate_start_select", (clock24Hour == 1), hourVibrateStart);
+        setSelectControlHours("hour_vibrate_end_select", (clock24Hour == 1), hourVibrateEnd);
+
+        if (installedVersion > NO_HOUR_RANGE_VERSION) {
+          if (hourVibrate == 1) {
+            var hoursSection = document.getElementById("hour_vibrate_hours_section");
+            hoursSection.style.display = "block";
+          }
+
+          $("#hour_vibrate_select").change(function(event) {
+            var hourVibrateSelect = document.getElementById("hour_vibrate_select");
+            var hoursSection = document.getElementById("hour_vibrate_hours_section");
+            hoursSection.style.display = (hourVibrateSelect.options[hourVibrateSelect.selectedIndex].value == 1) ? "block" : "none";
+          });
         }
 
         // Initialize Bluetooth vibrate
-        urlVariable = getURLVariable("bluetoothVibrate", "1");
-        if (isNaN(urlVariable)) {
-          urlVariable = "1";
-        }
-        
-        if (urlVariable != "0") {
-          $("#bluetooth_vibrate_select").val("1");
-          $("#bluetooth_vibrate_select").parent().addClass("ui-flipswitch-active");
-        }
+        initializeFlipSwitch("bluetoothVibrate", "bluetooth_vibrate_select", 1);
       });
-      
+
       $("#button_cancel").click(function() {
         document.location = "pebblejs://close#";
       });
@@ -94,32 +134,75 @@
         var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(settings));
         document.location = location;
       });
-      
+
       function getSettings() {
         var hourVibrateSelect = document.getElementById("hour_vibrate_select");
+        var hourStartSelect = document.getElementById("hour_vibrate_start_select");
+        var hourEndSelect = document.getElementById("hour_vibrate_end_select");
         var bluetoothVibrateSelect = document.getElementById("bluetooth_vibrate_select");
+
         var settings = {
           "currentVersion" : CURRENT_VERSION,
           "hourVibrate" : hourVibrateSelect.options[hourVibrateSelect.selectedIndex].value,
+          "hourVibrateStart" : hourStartSelect.options[hourStartSelect.selectedIndex].value,
+          "hourVibrateEnd" : hourEndSelect.options[hourEndSelect.selectedIndex].value,
           "bluetoothVibrate" : bluetoothVibrateSelect.options[bluetoothVibrateSelect.selectedIndex].value
         }
-        
+
         return settings;
       };
-      
+
+      function initializeFlipSwitch(variableName, switchId, defaultValue) {
+        var urlVariable = getURLVariableInt(variableName, defaultValue);
+        if (urlVariable == 1) {
+          $("#" + switchId).val("1");
+          $("#" + switchId).parent().addClass("ui-flipswitch-active");
+        }
+
+        return urlVariable;
+      }
+
       function getURLVariable(name, defaultValue) {
         name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
         var regexS = "[\\?&]" + name + "=([^&#]*)",
             regex = new RegExp(regexS),
             results = regex.exec(window.location.href);
-            
+
         if (results == null) {
           return defaultValue;
-          
+
         } else {
           return results[1];
         }
-      };
+      }
+
+      function getURLVariableInt(name, defaultValue) {
+        var result = getURLVariable(name, defaultValue);
+
+        if (isNaN(result)) {
+          result = defaultValue;
+
+        } else {
+          result = parseInt(result);
+        }
+
+        return result;
+      }
+
+      function setSelectControlHours(selectControlName, clock24, selectedValue) {
+        var selectControl = document.getElementById(selectControlName);
+        var hours = clock24 ? Labels24Hour : Labels12Hour;
+
+        for (var i = 0; i < 24; i++) {
+          var hourOption = document.createElement("option");
+          hourOption.text = hours[i];
+          hourOption.value = i;
+          selectControl.options.add(hourOption);
+        }
+
+        $("#" + selectControlName).val(selectedValue);
+        $("#" + selectControlName).selectmenu("refresh", true);
+      }
     </script> 
 
   </body>
